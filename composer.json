@@ -16,7 +16,10 @@
     ],
     "require": {
         "php": "^8.2",
-        "laravel/framework": "^10.0"
+        "laravel/framework": "^10.0",
+        "livewire/livewire": "^3.4",
+        "livewire/volt": "^1.6",
+        "wireui/wireui": "^v2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.5",
@@ -50,5 +53,6 @@
             "pestphp/pest-plugin": true
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "beta",
+    "prefer-stable": true
 }
