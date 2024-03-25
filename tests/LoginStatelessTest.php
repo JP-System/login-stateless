@@ -71,5 +71,5 @@ test('it should logout the authenticated user', function () {
 
     $this->assertGuest();
 
-    $component->assertHasNoErrors()->assertRedirect('/');
+    $component->assertHasNoErrors()->assertRedirect('/login');
 });
