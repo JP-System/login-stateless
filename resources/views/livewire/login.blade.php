@@ -1,11 +1,9 @@
 <?php
 
-use App\Livewire\Forms\LoginForm;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Session;
+use LoginStateless\Livewire\Forms\LoginForm;
 
 use function Livewire\Volt\form;
-use function Livewire\Volt\layout;
 
 form(LoginForm::class);
 
@@ -21,7 +19,7 @@ $login = function () {
 
 ?>
 
-<x-content>
+<div class="h-full">
     <form wire:submit="login" class="space-y-4">
         <x-input wire:model="form.email" label="E-mail" placeholder="E-mail" />
 
@@ -33,4 +31,4 @@ $login = function () {
 
         <x-button type="submit" label="Acessar" full />
     </form>
-</x-content>
+</div>

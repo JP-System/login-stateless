@@ -6,7 +6,6 @@ export default {
   presets: [require("./vendor/wireui/wireui/tailwind.config.js")],
 
   content: [
-    "./storage/framework/views/*.php",
     "./resources/views/**/*.blade.php",
     "./vendor/wireui/wireui/src/*.php",
     "./vendor/wireui/wireui/ts/**/*.ts",
@@ -20,6 +19,11 @@ export default {
       colors: {
         primary: colors.teal,
         secondary: colors.neutral,
+
+        background: {
+          white: colors.white,
+          dark: colors.neutral[800]
+        }
       },
     },
   },

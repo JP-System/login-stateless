@@ -1,6 +1,6 @@
 <?php
 
-use App\Livewire\Actions\Logout;
+use LoginStateless\Livewire\Actions\Logout;
 
 $logout = function (Logout $logout) {
     $logout();
@@ -10,8 +10,8 @@ $logout = function (Logout $logout) {
 
 ?>
 
-<x-content>
-    <div class="pb-4 text-gray-90 text-xl flex justify-center">
+<div class="h-full">
+    <div class="flex justify-center pb-4 text-xl text-secondary-900">
         {{ trans('Você está logado!') }}
     </div>
 
@@ -24,6 +24,6 @@ $logout = function (Logout $logout) {
     </div>
 
     @if (auth()->check())
-        @include('components.actions')
+        @include('login-stateless::components.actions')
     @endif
-</x-content>
+</div>

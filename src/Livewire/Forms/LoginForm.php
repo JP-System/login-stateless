@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Forms;
+namespace LoginStateless\Livewire\Forms;
 
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Support\Facades\Auth;
@@ -38,7 +38,7 @@ class LoginForm extends Form
             ]);
         }
 
-        if (! Auth::attempt($this->only(['email', 'password']), $this->remember)) {
+        if (! Auth::guard('web')->attempt($this->only(['email', 'password']), $this->remember)) {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
@@ -74,7 +74,7 @@ class LoginForm extends Form
      */
     protected function checkIfUserIsAuthorized(): bool
     {
-        $users = Str::of(config('system.support'))->explode(',');
+        $users = Str::of(config('system.admin'))->explode(',');
 
         return $users->filter()->contains($this->email);
     }
